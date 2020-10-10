@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Book;
+use JWTAyth;
 
 class BookController extends Controller
 {
@@ -23,9 +24,9 @@ class BookController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function __construct() 
     {
-        //
+        $this->middleware('auth:api');
     }
 
     /**

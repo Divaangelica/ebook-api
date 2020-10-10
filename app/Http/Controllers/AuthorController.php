@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Author;
+use JWTAuth;
 
 class AuthorController extends Controller
 {
@@ -22,9 +23,9 @@ class AuthorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function __construct() 
     {
-        //
+        $this->middleware('auth:api');
     }
 
     /**
